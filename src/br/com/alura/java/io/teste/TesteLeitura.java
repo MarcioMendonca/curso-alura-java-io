@@ -11,21 +11,19 @@ public class TesteLeitura {
 
 	public static void main(String[] args) throws IOException {
 		
-		//Fluxo de entrada com Arquivo
-		InputStream fis = new FileInputStream("lorem.txt");//Criando o fluxo concreto com Arquivo, mas binario
-		Reader isr = new InputStreamReader(fis); // Melhorando os dados binarios para caracteres
+		//Fluxo de Entrada com Arquivo
+		InputStream fis = new FileInputStream("lorem.txt");
+		Reader isr = new InputStreamReader(fis, "UTF-8");
 		BufferedReader br = new BufferedReader(isr);
 		
 		String linha = br.readLine();
 		
-		while ( linha != null ) {
+		while(linha != null) {
 			System.out.println(linha);
 			linha = br.readLine();
 		}
-		
-		System.out.println(linha);
-		
-		br.close();
-	}
 	
+		br.close();
+		
+	}
 }
